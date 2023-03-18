@@ -8,6 +8,7 @@ const { frontmatter } = Astro.props;
   <p><em>{frontmatter.description}</em></p>
   <p>Written by: {frontmatter.author}</p>
   <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+  <slot />
   <div class="tags">
     {
       frontmatter.tags.map((tag: unknown) => (
@@ -17,11 +18,10 @@ const { frontmatter } = Astro.props;
       ))
     }
   </div>
-  <slot />
 </BaseLayout>
 <style>
   a {
-    color: #00539f;
+    color: #000000;
   }
 
   .tags {
@@ -31,11 +31,12 @@ const { frontmatter } = Astro.props;
   }
 
   .tag {
-    margin: 0.25em;
     border: dotted 1px #a1a1a1;
-    border-radius: 0.5em;
+    border-radius: 1em;
     padding: 0.5em 1em;
-    font-size: 1.15em;
-    background-color: #f8fcfd;
+    font-size: 0.6em;
+    background-color: #ffffff;
+    margin: 4em 0.2em 0em;
+    text-decoration: none;
   }
 </style>

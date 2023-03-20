@@ -3,7 +3,9 @@ document.querySelector(".hamburger").addEventListener("click", () => {
 });
 
 // ヘッダーが消えるのを修正する
-window.addEventListener("load", function () {
-  var header = document.querySelector(".header");
-  header.style.display = "block";
-});
+// export default {
+//   onMount() {
+//     const header = document.querySelector(".header");
+//     header.style.display = "block";
+//   },
+// };

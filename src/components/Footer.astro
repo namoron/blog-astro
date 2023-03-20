@@ -1,0 +1,19 @@
+---
+import Social from "./Social.astro";
+const today = new Date();
+---
+
+<style>
+  footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+<footer>
+  &copy; {today.getFullYear()} namor. All rights reserved.
+</footer>

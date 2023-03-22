@@ -42,7 +42,7 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
         size="1.6em"
         gradient
       />
-      Jeanine White
+      namor
     </a>
     <menu-button>
       <template>
@@ -118,7 +118,7 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
         setExpanded(e.matches);
         btn.hidden = e.matches;
       };
-      const mediaQueries = window.matchMedia("(min-width: 50em)");
+      const mediaQueries = window.matchMedia("(min-width: 31em)");
       handleViewports(mediaQueries);
       mediaQueries.addEventListener("change", handleViewports);
     }
@@ -250,7 +250,7 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
     height: calc(var(--icon-size) + 2 * var(--icon-padding));
   }
 
-  @media (min-width: 50em) {
+  @media (min-width: 31em) {
     nav {
       display: grid;
       grid-template-columns: 1fr auto 1fr;

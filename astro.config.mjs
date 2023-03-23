@@ -1,8 +1,23 @@
-import { defineConfig } from 'astro/config';
-
+import { defineConfig } from "astro/config";
 import preact from "@astrojs/preact";
+
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact()]
+  integrations: [preact(), mdx()],
+  markdown: {
+    shikiConfig: {
+      syntaxHighlight: "prism",
+      // Shikiの組み込みテーマから選択（または独自のテーマを追加）
+      // https://github.com/shikijs/shiki/blob/main/docs/themes.md
+      // theme: "vsc-dark-plus",
+      // カスタム言語の追加
+      // 注：Shikiには.astroを含む無数の言語が内蔵されています。
+      // https://github.com/shikijs/shiki/blob/main/docs/languages.md
+      langs: [],
+      // 水平スクロールを防ぐために文字の折り返しを有効にする
+      wrap: true,
+    },
+  },
 });

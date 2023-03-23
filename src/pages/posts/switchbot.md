@@ -9,7 +9,6 @@ image:
 pubDate: 2023-03-21
 tags: ["astro", "successes"]
 ---
-
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
 以前から Google リモートデスクトップ使って iPad やスマホで家のデスクトップ PC を遠隔で動かしていました．ですが，PC が寝室にあるので電源を常時付けておく訳にもいかず遠隔で電源を操作したい！！
@@ -30,10 +29,10 @@ PC 電源を外から ON にできる装置
 
 電源を押す操作をするために Blynk loT というアプリを使いました．基本は無料ですが機能拡張したい場合はサブスクで使うことができます．アプリと ESP32 を連携するためには，メールで送られたサイトから固有のトークンをプログラムに貼り付けるだけでした．少しもの足りなかったので外から電源が入っているかを確認するために GPU の光るロゴに光センサーを取り付けて判定しました．
 
-![](https://namorz.com/blog/wp-content/uploads/2023/03/20221112_0114122-1024x1024.jpg)
+![img](https://namorz.com/blog/wp-content/uploads/2023/03/20221112_0114122-1024x1024.jpg)
 ロゴから電源の判定
 
-```
+```cpp
 //スマホ側で与えられたもののコピー
 #define BLYNK_TEMPLATE_ID           "                 "
 #define BLYNK_DEVICE_NAME           "                 "
@@ -75,7 +74,7 @@ BLYNK_WRITE(V0)
 }
 ```
 
-##### 操作画面
+操作画面
 
 PC の電源がついているか分かるように表示を付けて，ボタンを押したいときに動作するようにした．
 

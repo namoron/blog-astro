@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
 export async function getStaticPaths({}) {
-  const allPosts = await Astro.glob("../posts/*.md");
+  const allPosts = await Astro.glob("../posts/**/**/*.md");
   const uniqueTags = [
     ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
   ];
@@ -17,7 +17,7 @@ export async function getStaticPaths({}) {
   });
 }
 
-const allPosts = await Astro.glob("../../pages/posts/*.md");
+const allPosts = await Astro.glob("../../pages/posts/**/**/*.md");
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 // 日付順にソートする関数
@@ -29,11 +29,11 @@ const sortByDate = (a, b) => {
 <BaseLayout pageTitle={tag}>
   <p>Posts tagged with {tag}</p>
   <ul>
-    <!-- allPostsを日付順にソートして、一覧画面に表示する -->
+    <!-- Postsを日付順にソートして、一覧画面に表示する -->
     {
-      allPosts
+      posts
         .sort(sortByDate)
-        .map((post) => (
+        .map((post: { url: any; frontmatter: { title: any } }) => (
           <BlogPost url={post.url} title={post.frontmatter.title} />
         ))
     }

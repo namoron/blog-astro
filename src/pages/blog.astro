@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
-const allPosts = await Astro.glob("../pages/posts/*.md");
+const allPosts = await Astro.glob("../pages/posts/**/**/*.md");
 const pageTitle = "My Blog";
 // 日付順にソートする関数
 const sortByDate = (a, b) => {
@@ -12,14 +12,16 @@ const sortByDate = (a, b) => {
 <BaseLayout>
   <h3>{pageTitle}</h3>
   <p>This is where I will post about my journey learning Astro.</p>
-  <ul>
-    <!-- allPostsを日付順にソートして、一覧画面に表示する -->
-    {
-      allPosts
-        .sort(sortByDate)
-        .map((post) => (
-          <BlogPost url={post.url} title={post.frontmatter.title} />
-        ))
-    }
-  </ul>
+  <article>
+    <ul>
+      <!-- allPostsを日付順にソートして、一覧画面に表示する -->
+      {
+        allPosts
+          .sort(sortByDate)
+          .map((post) => (
+            <BlogPost url={post.url} title={post.frontmatter.title} />
+          ))
+      }
+    </ul>
+  </article>
 </BaseLayout>

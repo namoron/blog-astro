@@ -1,12 +1,17 @@
 import { defineConfig } from "astro/config";
 import preact from "@astrojs/preact";
 import mdx from "@astrojs/mdx";
-
 import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact(), mdx(), image()],
+  integrations: [
+    preact(),
+    mdx(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
+  ],
   markdown: {
     shikiConfig: {
       syntaxHighlight: "prism",

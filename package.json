@@ -19,6 +19,7 @@
     "astro": "^2.1.7",
     "preact": "^10.13.1",
     "processmd": "^4.7.0",
-    "remark-toc": "^8.0.1"
+    "remark-toc": "^8.0.1",
+    "sharp": "^0.31.3"
   }
 }

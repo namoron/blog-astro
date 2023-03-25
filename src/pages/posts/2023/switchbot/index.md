@@ -30,9 +30,9 @@ PC 電源を外から ON にできる装置
 
 ![ロゴから電源の判定](/pages/posts/2023/switchbot/gpu.jpg)
 
-![ロゴから電源の判定](./gpu.jpg)
+![ロゴから電源の判定](/gpu.jpg)
 
-<image src = "./gpu.jpg">
+<image src = "/gpu.jpg">
 <image src = "/pages/posts/2023/switchbot/gpu.jpg">
 
 ```cpp

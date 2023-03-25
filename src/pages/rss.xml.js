@@ -5,7 +5,7 @@ export async function get() {
     title: "Astro Learner | Blog",
     description: "My journey learning Astro",
     site: "https://my-blog-site.netlify.app",
-    items: await pagesGlobToRssItems(import.meta.glob("./**/*.md")),
+    items: await pagesGlobToRssItems(import.meta.glob("./**/*.mdx")),
     customData: `<language>en-us</language>`,
   });
 }

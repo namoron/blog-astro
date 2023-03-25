@@ -13,8 +13,6 @@ tags: ["astro", "successes"]
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
 以前から Google リモートデスクトップ使って iPad やスマホで家のデスクトップ PC を遠隔で動かしていました．ですが，PC が寝室にあるので電源を常時付けておく訳にもいかず遠隔で電源を操作したい！！
-
-![](https://namorz.com/wp-content/uploads/2023/03/20221028_091717-983x1024.jpg)
 PC 電源を外から ON にできる装置
 
 最近 Amazon で SwitchBot やそれに似た製品でスマホからスイッチを押すことができる装置が売られています．が，少々高いので ESP32 を用いてサーボモータを動かし，直接電源ボタンを押すことにしました.
@@ -30,11 +28,10 @@ PC 電源を外から ON にできる装置
 
 電源を押す操作をするために Blynk loT というアプリを使いました．基本は無料ですが機能拡張したい場合はサブスクで使うことができます．アプリと ESP32 を連携するためには，メールで送られたサイトから固有のトークンをプログラムに貼り付けるだけでした．少しもの足りなかったので外から電源が入っているかを確認するために GPU の光るロゴに光センサーを取り付けて判定しました．
 
-<div align = "center">
-<img src="./gpu.jpg" width="50%">
-</div>
-
-ロゴから電源の判定
+<center>
+  ![ロゴから電源の判定](/src/pages/posts/2023/switchbot/gpu.jpg)
+  <p>ロゴから電源の判定</p>
+</center>
 
 ```cpp
 //スマホ側で与えられたもののコピー
@@ -82,7 +79,11 @@ BLYNK_WRITE(V0)
 
 PC の電源がついているか分かるように表示を付けて，ボタンを押したいときに動作するようにした．
 
-![](https://namorz.com/blog/wp-content/uploads/2023/03/Screenshot_20230319-091808-1.jpg)
+<center>
+  ![操作画面](/src/pages/posts/2023/switchbot/scrs.jpg)
+  <p>操作画面</p>
+</center>
+
 操作画面
 
 ##### 実際にやってみて

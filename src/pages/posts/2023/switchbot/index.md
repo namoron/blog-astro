@@ -29,11 +29,13 @@ PC 電源を外から ON にできる装置
 電源を押す操作をするために Blynk loT というアプリを使いました．基本は無料ですが機能拡張したい場合はサブスクで使うことができます．アプリと ESP32 を連携するためには，メールで送られたサイトから固有のトークンをプログラムに貼り付けるだけでした．少しもの足りなかったので外から電源が入っているかを確認するために GPU の光るロゴに光センサーを取り付けて判定しました．
 
 ![ロゴから電源の判定](./../../../../public/gpu.jpg)
+![ロゴから電源の判定](C:\Users\shiro\Development\blog-astro\src\pages\posts\2023\switchbot\gpu.jpg)
 
 ![ロゴから電源の判定](./gpu.jpg)
 ![ロゴから電源の判定](./gpu.jpg)
 
 <image src = "./gpu.jpg">
+<image src = "C:\Users\shiro\Development\blog-astro\src\pages\posts\2023\switchbot\gpu.jpg">
 <image src = "/src/pages/posts/2023/switchbot">
 
 ```cpp

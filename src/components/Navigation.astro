@@ -178,6 +178,24 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
     flex-wrap: wrap;
     gap: 0.625rem;
     font-size: var(--icon-size);
+    position: relative; /*アンダーラインの位置を決めるための基準 */
+  }
+
+  .socials::after {
+    position: absolute;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    bottom: -1px; /*アンダーラインがaタグの下端から現れる*/
+    transform: scale(0, 1); /*アンダーラインの縮尺比率。ホバー前はx方向に0*/
+    transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+    transition: transform 0.3s; /*変形の時間*/
+  }
+  .socials:hover::after {
+    transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
+    visibility: visible; /*ホバー後、アンダーラインを可視化する*/
   }
 
   .social {

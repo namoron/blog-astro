@@ -11,6 +11,7 @@ const { frontmatter } = Astro.props;
   <p>Written by: {frontmatter.author}</p>
   <!-- <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} /> -->
   <div class="tags">
+    <p>Tags :</p>
     {
       frontmatter.tags.map((tag: unknown) => (
         <p class="tag">
@@ -23,7 +24,28 @@ const { frontmatter } = Astro.props;
 </BaseLayout>
 <style>
   a {
-    color: #00539f;
+    color: #454545;
+    position: relative; /*アンダーラインの位置を決めるための基準 */
+    text-decoration: none;
+    font-size: medium;
+  }
+
+  a::after {
+    position: absolute;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    bottom: -1px; /*アンダーラインがaタグの下端から現れる*/
+    transform: scale(0, 1); /*アンダーラインの縮尺比率。ホバー前はx方向に0*/
+    transform-origin: left top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の左端*/
+    transition: transform 0.3s; /*変形の時間*/
+  }
+
+  a:hover::after {
+    transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
+    visibility: visible; /*ホバー後、アンダーラインを可視化する*/
   }
 
   .tags {
@@ -34,10 +56,12 @@ const { frontmatter } = Astro.props;
 
   .tag {
     margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: 0.5em;
-    padding: 0.5em 1em;
+    border: solid;
+    border-width: 1px;
+    border-color: #676767;
+    border-radius: 0.6em;
+    padding: 0.3em 1em 0em 1em;
     font-size: 1.15em;
-    background-color: #f8fcfd;
+    background-color: #ebebeb;
   }
 </style>

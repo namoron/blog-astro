@@ -16,12 +16,47 @@ const sortByDate = (a, b) => {
     <ul>
       <!-- allPostsを日付順にソートして、一覧画面に表示する -->
       {
-        allPosts
-          .sort(sortByDate)
-          .map((post) => (
+        allPosts.sort(sortByDate).map((post) => (
+          <>
+            <a href={post.url}>
+              <img
+                class="thumbnail"
+                src={post.frontmatter.img}
+                alt={post.frontmatter.img_alt}
+              />
+            </a>
             <BlogPost url={post.url} title={post.frontmatter.title} />
-          ))
+          </>
+        ))
       }
     </ul>
   </article>
 </BaseLayout>
+<style>
+  .container {
+    padding: 0 2 rem;
+  }
+  .thumbnail {
+    width: 950px;
+    height: 400px;
+    margin-bottom: 20px;
+    box-shadow: 4px 5px 12px black;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .thumbnail:hover {
+    transform: translate(4px, 5px);
+    box-shadow: none;
+  }
+  .grid {
+    display: grid;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    gap: 40px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auot-fit, minmax(400px, 1fr));
+  }
+  ul {
+    list-style: none;
+  }
+</style>

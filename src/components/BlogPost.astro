@@ -1,10 +1,43 @@
 ---
-const { title, url } = Astro.props;
+const { title, url, date } = Astro.props;
 ---
 
-<li><a href={url}>{title}</a></li>
+<li>
+  <a href={url} id="title">{title}</a>
+  <br />
+  <a> <font color="#0000">投稿日時 : {date}</font></a>
+</li>
 <style>
   a {
-    color: rgb(0, 114, 202);
+    margin-right: 10em;
+  }
+  #title {
+    font-size: 200%;
+    text-decoration: none;
+    margin: 0%;
+    position: relative; /*アンダーラインの位置を決めるための基準 */
+  }
+  @media (max-width: 600px) {
+    #title {
+      font-size: 100%;
+    }
+  }
+  #title::after {
+    position: absolute;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    bottom: -1px; /*アンダーラインが位置する、各リストの下端からの高さ　ヘッダーの下端に合わせています*/
+    visibility: hidden; /*ホバー前に、アンダーラインを可視化しない*/
+  }
+  #title:hover::after {
+    visibility: visible; /*ホバー後、アンダーラインを可視化する*/
+  }
+  @media (min-width: 600px) {
+    li {
+      width: 30em;
+    }
   }
 </style>

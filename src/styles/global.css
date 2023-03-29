@@ -4,6 +4,7 @@ html {
 }
 
 body {
+  margin: 0%;
   background-color: #f1f5f9;
   color: var(--gray-200);
   font-family: var(--font-body);
@@ -21,6 +22,7 @@ main {
 
 img {
   max-width: 50%;
+  min-width: 100px;
   height: auto;
 }
 
@@ -81,10 +83,10 @@ h5 {
   --gray-999_40: hsla(var(--gray-999-basis), 0.4);
   --gray-999: #ffffff;
 
-  --accent-light: #c561f6;
-  --accent-regular: #7611a6;
+  --accent-light: #bcbcbc;
+  --accent-regular: #3f3f3f;
   --accent-dark: #1c0056;
-  --accent-overlay: hsla(280, 89%, 67%, 0.33);
+  --accent-overlay: hsla(0, 0%, 63%, 0.33);
   --accent-subtle-overlay: var(--accent-overlay);
   --accent-text-over: var(--gray-999);
 
@@ -148,7 +150,7 @@ h5 {
 html,
 body {
   height: 100%;
-  overflow-x: hidden;
+  overflow-x: visible important;
 }
 
 /* Utilities */

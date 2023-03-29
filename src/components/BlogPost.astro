@@ -10,6 +10,7 @@ const { title, url, date } = Astro.props;
 <style>
   a {
     margin-right: 10em;
+    white-space: nowrap;
   }
   #title {
     font-size: 200%;
@@ -42,7 +43,12 @@ const { title, url, date } = Astro.props;
   }
   @media (max-width: 599px) {
     li {
-      width: 15em;
+      width: 22em;
+    }
+  }
+  @media (max-width: 500px) {
+    li {
+      width: 16em;
     }
   }
 </style>

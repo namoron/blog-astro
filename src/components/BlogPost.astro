@@ -3,9 +3,12 @@ const { title, url, date } = Astro.props;
 ---
 
 <li>
-  <a href={url} id="title">{title}</a>
-  <br />
-  <a> <font color="#0000">投稿日時 : {date}</font></a>
+  <div class="DivLink">
+    <a class="Link" href={url}></a>
+    <a href={url} id="title">{title}</a>
+    <br />
+    <a> <font color="#0000">投稿日時 : {date}</font></a>
+  </div>
 </li>
 <style>
   a {
@@ -55,5 +58,19 @@ const { title, url, date } = Astro.props;
     li {
       width: 16em;
     }
+  }
+  .DivLink {
+    position: relative;
+    padding: 2em;
+  }
+
+  .DivLink .Link {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
   }
 </style>

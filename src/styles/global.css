@@ -16,13 +16,12 @@ main {
   margin: 0 auto;
   width: 92%;
   max-width: 80ch;
-  padding: 1rem;
   line-height: 1.5;
 }
 
 img {
-  max-width: 50%;
-  min-width: 100px;
+  max-width: 60%;
+  min-width: 120px;
   height: auto;
 }
 

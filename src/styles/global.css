@@ -149,7 +149,7 @@ h5 {
 html,
 body {
   height: 100%;
-  overflow-x: visible important;
+  overflow-x: hidden;
 }
 
 /* Utilities */

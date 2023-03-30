@@ -39,24 +39,32 @@ const { title, url, date } = Astro.props;
   #title:hover::after {
     visibility: visible; /*ホバー後、アンダーラインを可視化する*/
   }
-  @media (min-width: 600px) {
+  li {
+    width: 35em;
+  }
+  @media (max-width: 700px) {
     li {
-      width: 30em;
+      width: 28em;
     }
   }
-  @media (max-width: 599px) {
+  @media (max-width: 600px) {
     li {
       width: 22em;
     }
   }
   @media (max-width: 500px) {
     li {
-      width: 17em;
+      width: 18em;
     }
   }
   @media (max-width: 430px) {
     li {
       width: 15em;
+    }
+  }
+  @media (max-width: 390px) {
+    li {
+      width: 13em;
     }
   }
   .DivLink {

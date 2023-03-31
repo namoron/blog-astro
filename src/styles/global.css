@@ -59,6 +59,9 @@ h4 {
 h5 {
   font-size: var(--text-xl);
 }
+p {
+  font-size: 130%;
+}
 
 .expanded {
   display: unset;

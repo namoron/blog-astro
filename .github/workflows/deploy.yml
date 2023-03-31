@@ -1,16 +1,32 @@
-on: push
-name: 🚀 Deploy website on push
+name: Deploy website on push
+on:
+  push:
+    branches: [master]
+
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
+
     steps:
-      - name: 🚚 Get latest code
+      - name: Get latest code
         uses: actions/checkout@v2
 
-      - name: 📂 Sync files
+      - name: Use Node.js 18
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+
+      - name: Build Project
+        run: |
+          npm install
+          npm run build
+
+      - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.1
         with:
-          server: sv10203.xserver.jp
-          username: namoron@namorz.com
-          password: ${{ secrets.ftp_password }}
+          server: ${{ secrets.SERVER }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: ${{ secrets.SERVERDIR }}

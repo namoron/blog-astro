@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import preact from "@astrojs/preact";
 import mdx from "@astrojs/mdx";
 import image from "@astrojs/image";
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
@@ -26,4 +27,12 @@ export default defineConfig({
       wrap: true,
     },
   },
+  integrations: [
+    partytown({
+      // Adds dataLayer.push as a forwarding-event.
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+  ],
 });

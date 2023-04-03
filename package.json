@@ -21,5 +21,8 @@
     "processmd": "^4.7.0",
     "remark-toc": "^8.0.1",
     "sharp": "^0.31.3"
+  },
+  "devDependencies": {
+    "@astrojs/partytown": "^1.2.0"
   }
 }

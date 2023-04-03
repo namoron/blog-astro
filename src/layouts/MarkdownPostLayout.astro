@@ -5,7 +5,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout>
-  <h2>{frontmatter.title}</h2>
+  <h4>{frontmatter.title}</h4>
   <p>{frontmatter.pubDate.slice(0, 10)}</p>
   <p><em>{frontmatter.description}</em></p>
   <p>Written by: {frontmatter.author}</p>
@@ -60,7 +60,7 @@ const { frontmatter } = Astro.props;
     border-width: 1px;
     border-color: #676767;
     border-radius: 0.6em;
-    padding: 0.3em 1em 0em 1em;
+    padding: 0.5em 1em 0em 1em;
     font-size: 1.15em;
     background-color: #ebebeb;
   }

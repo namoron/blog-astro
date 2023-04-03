@@ -34,8 +34,70 @@ const sortByDate = (a, b) => {
       posts
         .sort(sortByDate)
         .map((post: { url: any; frontmatter: { title: any } }) => (
-          <BlogPost url={post.url} title={post.frontmatter.title} />
+          <div class="pairs">
+            <div class="titile">
+              <BlogPost
+                url={post.url}
+                title={post.frontmatter.title}
+                date={post.frontmatter.pubDate}
+              />
+            </div>
+            <div class="data">
+              <a href={post.url}>
+                <img
+                  class="thumbnail"
+                  src={post.frontmatter.img}
+                  alt={post.frontmatter.img_alt}
+                />
+              </a>
+            </div>
+          </div>
         ))
     }
   </ul>
 </BaseLayout>
+<style>
+  .container {
+    padding: 0 2 rem;
+  }
+  .thumbnail {
+    text-align: right;
+    width: 950px;
+    margin-right: 10px;
+    box-shadow: 2px 3px 8px black;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .thumbnail:hover {
+    transform: translate(1px, 2px);
+    box-shadow: none;
+  }
+  /* .grid {
+    display: grid;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    gap: 40px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auot-fit, minmax(400px, 1fr));
+  } */
+  ul {
+    list-style: none;
+    padding: 0%;
+  }
+  .title {
+    padding: 5% 0%;
+  }
+  .pairs {
+    display: flex;
+    position: relative;
+    /* border: 1px solid #8b8b8b; */
+  }
+  /* .pairs .title {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  } */
+</style>

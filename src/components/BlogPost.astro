@@ -7,13 +7,16 @@ const { title, url, date } = Astro.props;
     <a class="Link" href={url}></a>
     <a href={url} id="title">{title}</a>
     <br />
-    <a> <font color="#0000">投稿日時 : {date}</font></a>
+    <a id="postdate"> <font color="#0000">投稿日時:{date}</font></a>
   </div>
 </li>
 <style>
   a {
     margin-right: 10em;
     /* white-space: nowrap; */
+  }
+  #postdate{
+    white-space: nowrap;
   }
   #title {
     font-size: 200%;
@@ -54,7 +57,7 @@ const { title, url, date } = Astro.props;
   }
   @media (max-width: 500px) {
     li {
-      width: 18em;
+      width: 19em;
     }
   }
   @media (max-width: 430px) {
@@ -62,9 +65,9 @@ const { title, url, date } = Astro.props;
       width: 15em;
     }
   }
-  @media (max-width: 390px) {
+  @media (max-width: 380px) {
     li {
-      width: 13em;
+      width: 14em;
     }
   }
   .DivLink {

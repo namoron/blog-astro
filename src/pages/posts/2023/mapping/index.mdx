@@ -1,0 +1,45 @@
+---
+layout: ../../../../layouts/MarkdownPostLayout.astro
+title: 簡単な10年日記を作った
+author: namor
+# description: "This post will show up on its own!"
+img: /2023/10years/overview.jpeg
+img_alt: ""
+pubDate: "2023-03-21"
+tags: ["software"]
+---
+
+日記アプリでつけるとサービス終了に怯えながら生きなければならないし，カレンダーアプリだと一覧性が悪くなってしまう．だったら作ろうとなった．
+
+##### 表計算ソフト or Notion
+
+最初，Notion のデータベースあたりに作ろうとしたが，どん溜まっていく一方になってしまった．そのデータをエクスポートして整理することも考えたが，だったらスプレッドシートでいいではないか!
+
+##### Google Form と スプレッドシートの組み合わせ
+
+結局これが一番楽
+
+日付，内容，写真を Google Form に書くことで連携したスプレッドシートで拾って，Google Drive に上がった写真の URL を IMAGE 関数で表示できるように変換すれば完成！
+
+<div align="center">
+  <img src="/2023/10years/screen.png " alt="Google Form の画面" />
+  <p>Google Form の画面</p>
+</div>
+Google Form の集計シート から IMPORTRANGE関数を使用して新たなまとめシートに転記し，URLを変えてIMAGE
+関数で表示させた．
+<div align="center">
+  <img src="/2023/10years/matome.png" alt="まとめシート" />
+  <p>まとめシート</p>
+  まとめシートができたら，見やすいシートを作りそこに転記すれば完成！！
+
+これを 365 行 ×10 年やりたいなぁ．
+
+<div align="center">
+  <img
+    src="/2023/10years/overview.jpeg"
+    alt="10年日記本体(ぼかしを入れています)"
+  />
+  <p>10年日記本体(ぼかしを入れています)</p>
+</div>
+
+</div>

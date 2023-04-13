@@ -16,14 +16,18 @@ const { title, url, date } = Astro.props;
     /* white-space: nowrap; */
   }
   #postdate {
-    font-size: 2vmin;
     white-space: nowrap;
   }
   #title {
-    font-size: 3vmin;
+    font-size: 180%;
     text-decoration: none;
     margin: 0%;
     position: relative; /*アンダーラインの位置を決めるための基準 */
+  }
+  @media (max-width: 600px) {
+    #title {
+      font-size: 130%;
+    }
   }
   #title::after {
     position: absolute;

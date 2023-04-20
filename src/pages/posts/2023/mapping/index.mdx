@@ -3,8 +3,33 @@ layout: ../../../../layouts/MarkdownPostLayout.astro
 title: Google マップのロケーション履歴をマッピングした
 author: namor
 # description: "This post will show up on its own!"
-img: /2023/mapping/overview.jpeg
+img: /2023/mapping/thum.jpg
 img_alt: ""
 pubDate: "2023-04-21"
 tags: ["software"]
 ---
+
+Google のロケーション履歴を 5 年前から付けていました．Google マップだと，1 日ごとの履歴は見れるもの特定の期間全体を俯瞰して見ることができなかった．そこで今回任意の期間の行動ログを俯瞰して見たいとなった．今回は，基本先駆者の作ったものをそのまま使いました．
+
+### まずはじめに
+
+今回は以下のサイトを使用して位置情報データからマッピングました．このサイトは csv,json,geojson から位置情報をマッピングしてくれるサイトですが，ダウンロードできるデータが json のみとなっていて，移動手段など余計なデータがあることから 5 年分で 400MB ありました．その状態でサイトへアップロードしたものの容量が大きすぎてエラーを吐いてしまったのでマッピングに必要なデータのみを抽出しました．
+
+使用サイト:https://kepler.gl/demo
+
+### Google データ エクスポート
+
+まず，ロケーション履歴を<a href="https://takeout.google.com/" > Google データ エクスポート </a>からダウンロードする．
+
+### json から csv に変換
+
+Python を用い json を csv に変換した．これにより，移動手段，場所の名前，住所，誤差の範囲などの余計な情報を削ることができ，容量を削減することができる．
+
+使用サイト:https://qiita.com/jam-goat/items/99dbdd4976544686a0ba
+
+### 完成
+
+<div align="center">
+  <img src="/2023/mapping/kansei.png" alt="完成図" />
+  <p>※あえて荒くしてます</p>
+</div>

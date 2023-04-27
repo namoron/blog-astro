@@ -3,7 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
-const pageTitle = "このサイトについて";
+const pageTitle = "About This Site";
 const identity = {
   firstName: "Sarah",
   country: "Canada",
@@ -21,7 +21,7 @@ const textCase = "uppercase";
 ---
 
 <BaseLayout>
-  <h4>{pageTitle}</h4>
+  <h2>{pageTitle}</h2>
   
   静的サイトジェネレータ<a href="https://astro.build/">Astro.js</a
   >で作成して，<a href="https://www.netlify.com/">Netlify</a

@@ -10,24 +10,39 @@ const pageTitle = "Home Page";
     client:load
     messages={["Hej", "Hallo", "Hola", "Habari", "こんにちは"]}
   /> -->
+  
   <div id="diary">
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTdcvXdB3OOjxYOZrKXzZUd0ffFMA2RBEPJjmCjcYZn7Jfst3DBy_OMP12CnXF-mWoFYvN5MWenttsQ/pubhtml?gid=848457820&amp;single=false&amp;widget=false&amp;headers=false&amp;chrome=false"width="1600em" height="1800em" ></iframe>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTdcvXdB3OOjxYOZrKXzZUd0ffFMA2RBEPJjmCjcYZn7Jfst3DBy_OMP12CnXF-mWoFYvN5MWenttsQ/pubhtml?gid=848457820&amp;single=false&amp;widget=false&amp;headers=false&amp;chrome=false"width="1600em" height="3000em" ></iframe>
+    </div>
+  <div id="diarypho">
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTdcvXdB3OOjxYOZrKXzZUd0ffFMA2RBEPJjmCjcYZn7Jfst3DBy_OMP12CnXF-mWoFYvN5MWenttsQ/pubhtml?gid=848457820&amp;single=false&amp;widget=false&amp;headers=false&amp;chrome=false"width="1600em" height="50000em" ></iframe>
     </div>
     <style>
     #diary{
-      transform: scale(0.4,0.4);
+      transform: scale(0.7,0.7);
       position:  relative;        /* 要素の配置方法を指定 */
-      top: -30em  ;                  /* 上からの位置指定 */
-      left: -10em;
+      top: -20em  ;                  /* 上からの位置指定 */
+      left: -20em;
+    }
+    @media screen and (min-width:601px) {
+      #diarypho{
+        display:none;
+      }
     }
     @media screen and (max-width:600px) {
       #diary{
-        transform: scale(0.28,0.28);
-        position:  relative;        /* 要素の配置方法を指定 */
-        top: -30em  ;                  /* 上からの位置指定 */
-        left: -10em;
+        display:none;
       }
     }
+    @media screen and (max-width:600px) {
+      #diarypho{
+        transform: scale(0.1,0.1);
+        position:  relative;        /* 要素の配置方法を指定 */
+        top: -1405em  ;                  /* 上からの位置指定 */
+        left: -4em;
+      }
+    }
+    
     #img_icon {
       border: 4px solid #0a1f71;
       width: 1em;

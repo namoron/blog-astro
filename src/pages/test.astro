@@ -11,7 +11,7 @@ const pageTitle = "Home Page";
     messages={["Hej", "Hallo", "Hola", "Habari", "こんにちは"]}
   /> -->
   <div id="diary">
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTdcvXdB3OOjxYOZrKXzZUd0ffFMA2RBEPJjmCjcYZn7Jfst3DBy_OMP12CnXF-mWoFYvN5MWenttsQ/pubhtml?gid=848457820&amp;single=false&amp;widget=false&amp;headers=false&amp;chrome=false"width="1600em" height="2000em" ></iframe>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTdcvXdB3OOjxYOZrKXzZUd0ffFMA2RBEPJjmCjcYZn7Jfst3DBy_OMP12CnXF-mWoFYvN5MWenttsQ/pubhtml?gid=848457820&amp;single=false&amp;widget=false&amp;headers=false&amp;chrome=false"width="1600em" height="1800em" ></iframe>
     </div>
     <style>
     #diary{
@@ -19,14 +19,21 @@ const pageTitle = "Home Page";
       position:  relative;        /* 要素の配置方法を指定 */
       top: -30em  ;                  /* 上からの位置指定 */
       left: -10em;
-
+    }
+    @media screen and (max-width:600px) {
+      #diary{
+        transform: scale(0.28,0.28);
+        position:  relative;        /* 要素の配置方法を指定 */
+        top: -30em  ;                  /* 上からの位置指定 */
+        left: -10em;
+      }
     }
     #img_icon {
       border: 4px solid #0a1f71;
       width: 1em;
       height: auto;
-      padding: 0%;
-      margin:0%
+      padding: 2%;
+      margin:2%
     }
     #namor {
       margin: 0%;
